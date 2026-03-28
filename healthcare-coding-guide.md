@@ -144,9 +144,50 @@ The dental equivalent of CPT — procedure codes for dental services.
 
 ---
 
-## A Note on "USCLC"
+## A Note on "USCLS" (what you likely heard as "USCLC")
 
-You may have encountered **USCLC** (or similar acronyms) in your workplace context — this likely refers to an internal system, a payer-specific code list, or a regional/organizational abbreviation. It is not a standard national code set like the ones above. If you hear it at work, it's worth asking what specific system or list it refers to in your organization's context.
+**USCLS** stands for **Uniform Standard Code List for Services** — and if you're working in Abu Dhabi, this is highly relevant to you. It is a DoH Abu Dhabi-specific supplementary code set used for services that don't map cleanly to standard CPT or HCPCS codes. Think of it as Abu Dhabi's local extension of the standard code sets.
+
+It is *not* a US national standard — it is specific to the Abu Dhabi healthcare ecosystem and governed by the **Department of Health Abu Dhabi (DoH)**.
+
+---
+
+## Abu Dhabi, UAE — What Actually Applies Here
+
+The coding systems described in this document were largely developed in the United States, but Abu Dhabi has formally adopted most of them. Here's the status of each:
+
+### Regulatory Authority: DoH Abu Dhabi
+
+The **Department of Health Abu Dhabi (DoH)** — formerly called **HAAD (Health Authority – Abu Dhabi)** — is the body that governs all healthcare coding, billing, and claims in the emirate. All licensed facilities must follow DoH rules. The DoH publishes a **Coding Manual** and annual **Claims & Adjudication Rules** that are binding.
+
+> Dubai has a separate authority: the **Dubai Health Authority (DHA)**. The northern emirates fall under the **Ministry of Health and Prevention (MOHAP)**. Rules differ between them.
+
+### What's Used in Abu Dhabi
+
+| Code Set | Used in Abu Dhabi? | Notes |
+|----------|-------------------|-------|
+| **ICD-10-CM** | Yes, mandated | Exact same system as the US. Used for all diagnosis coding. |
+| **CPT** | Yes, mandated | Same AMA CPT codes. Used for outpatient and physician billing. |
+| **HCPCS Level II** | Yes | Used for drugs, equipment, and supplies, same as US usage. |
+| **IR-DRG** | Yes, for inpatient | Abu Dhabi uses **3M International Refined DRGs (IR-DRG)** — a globally adapted version of DRGs, slightly different from the US MS-DRG. Same concept, different variant. |
+| **USCLS** | Yes, Abu Dhabi specific | DoH-specific service codes for things not covered by CPT/HCPCS. |
+| **CDT** | Yes | Dental procedure codes used the same way. |
+| **LOINC** | Yes | Published on DoH's Shafafiya portal for lab interoperability. |
+| **SNOMED CT** | Yes | Available via Shafafiya for clinical documentation. |
+| **NDC** | Partial | Drug codes exist but Abu Dhabi uses its own drug reference list alongside NDC. |
+| **ICD-10-PCS** | Yes | Used for inpatient procedure coding. |
+
+### Key Abu Dhabi–Specific Concepts
+
+**Shafafiya Portal** — The DoH's official online portal that publishes all reference code lists, price lists, claim schemas, and coding updates. Think of it as Abu Dhabi's equivalent of the CMS website. All providers and payers refer to it.
+
+**Mandatory Tariff List** — Abu Dhabi has a government-set price list for services, based on CPT RVUs (relative value units). Unlike the US where prices are heavily negotiated between payers and providers, Abu Dhabi has a floor price structure.
+
+**IR-DRG vs MS-DRG** — The US uses MS-DRG (Medicare Severity DRG). Abu Dhabi uses **IR-DRG (International Refined DRG)** from 3M, which is designed for international use. The logic is the same — one bundled payment for an inpatient stay — but the grouping weights and code mappings differ.
+
+**eClaims** — Both Abu Dhabi (DoH) and Dubai (DHA) mandate electronic claims submission through their respective portals. Paper claims are not standard practice.
+
+**Three payer layers** — In Abu Dhabi, mandatory health insurance means most residents are covered. Claims flow from provider → TPA (Third Party Administrator) → insurance company → DoH oversight. Understanding which TPA (e.g., Daman, Thiqa, ADNIC) is involved matters because adjudication rules can vary slightly.
 
 ---
 
@@ -184,8 +225,14 @@ Here's a simplified example of a real patient encounter flowing through these sy
 
 ## Key Organizations to Know
 
-- **CMS** — Centers for Medicare & Medicaid Services. The federal agency that runs Medicare and Medicaid and maintains many of these code sets.
+### Global / US (origin of most code sets)
+- **CMS** — Centers for Medicare & Medicaid Services. US federal agency that maintains ICD-10-CM, HCPCS, DRG, and claims standards.
 - **AMA** — American Medical Association. Owns and licenses CPT.
 - **WHO** — World Health Organization. Maintains the base ICD system.
-- **ONC** — Office of the National Coordinator for Health Information Technology. Drives EHR standards and interoperability policy.
-- **NUCC / NUBC** — National Uniform Claim Committee / National Uniform Billing Committee. Set standards for professional (CMS-1500) and institutional (UB-04) claim forms.
+
+### Abu Dhabi / UAE
+- **DoH** — Department of Health Abu Dhabi (formerly HAAD). Regulates all healthcare in Abu Dhabi emirate; publishes the Coding Manual and Claims & Adjudication Rules.
+- **DHA** — Dubai Health Authority. Same role as DoH but for Dubai; uses slightly different rules.
+- **MOHAP** — Ministry of Health and Prevention. Governs the northern emirates (Sharjah, Ajman, RAK, etc.).
+- **Daman** — The largest health insurer / TPA in Abu Dhabi; administers the Thiqa scheme for UAE nationals.
+- **Shafafiya** — DoH's online portal for code lists, reference prices, and claim submission standards.
