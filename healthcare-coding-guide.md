@@ -17,6 +17,57 @@ Codes are that standardized language.
 
 ---
 
+## Inpatient vs Outpatient: The Most Important Distinction in Healthcare Coding
+
+Before diving into specific code sets, you need to understand this one distinction — it determines *which codes apply*, *who submits the claim*, and *how the hospital gets paid*.
+
+### Outpatient
+
+A patient is **outpatient** when they receive care without being formally admitted to a hospital overnight. This covers a huge range of encounters:
+
+- A GP or specialist office visit
+- An emergency room visit where the patient is treated and sent home
+- A same-day surgery (e.g., a minor procedure done and the patient goes home the same day)
+- Lab tests, imaging (X-ray, MRI), physiotherapy
+- Pharmacy prescriptions
+
+**How it's billed:** The provider (doctor, clinic, lab) submits a claim line-by-line for each service performed. Each service gets a **CPT** or **HCPCS** code. The payer reimburses per service — this is called **Fee for Service (FFS)**.
+
+**Who submits the claim:** The physician or facility submits separately. A surgeon and the hospital can both submit claims for the same outpatient surgery — the surgeon bills for their professional skill (CPT), the facility bills for using the room and equipment.
+
+### Inpatient
+
+A patient is **inpatient** when a physician formally **admits** them to a hospital with the expectation they'll stay at least overnight. This is a deliberate clinical decision — not just any hospital visit qualifies.
+
+Examples:
+- Admitted for surgery with a multi-day recovery (e.g., hip replacement, bypass surgery)
+- Admitted for a serious illness requiring monitoring (e.g., heart attack, stroke, sepsis)
+- Admitted for childbirth
+
+**How it's billed:** The entire hospital stay is bundled into a single payment using a **DRG** (Diagnosis-Related Group). All the individual services during the stay — nursing, labs, medications, procedures — are rolled into one grouped payment. Line-by-line CPT billing does *not* apply for the facility portion of inpatient stays.
+
+**Who submits the claim:** The hospital submits one claim for the stay. The attending physician(s) still submit separate professional fee claims using CPT.
+
+### Why It Matters for Coding
+
+| Factor | Outpatient | Inpatient |
+|--------|-----------|-----------|
+| Procedure coding | CPT (+ HCPCS) | ICD-10-PCS |
+| Facility payment model | Fee for Service per CPT code | Single DRG payment |
+| Diagnosis coding | ICD-10-CM | ICD-10-CM |
+| Claim form (US context) | CMS-1500 (professional) or UB-04 (facility) | UB-04 |
+| Abu Dhabi payment model | CPT-based Mandatory Tariff (FFS) | IR-DRG bundled payment |
+
+### The "Observation" Grey Area
+
+There is a middle category worth knowing: **observation status**. A patient placed under observation is technically *outpatient* even if they sleep at the hospital overnight. This matters because it affects how the hospital is reimbursed and what the patient owes. In Abu Dhabi, DoH rules define when observation billing applies.
+
+### Ambulatory Surgery (Day Case)
+
+Common in Abu Dhabi — a patient comes in, has a surgical procedure under anaesthesia, and leaves the same day. This is **outpatient**, billed with CPT codes, even though an operating theatre was used. Many procedures that historically required inpatient admission (e.g., cataract surgery, laparoscopic cholecystectomy) are now routinely done as day cases.
+
+---
+
 ## Diagnosis Codes: What's Wrong With the Patient
 
 ### ICD-10-CM (International Classification of Diseases, 10th Revision, Clinical Modification)
@@ -158,7 +209,7 @@ The coding systems described in this document were largely developed in the Unit
 
 ### Regulatory Authority: DoH Abu Dhabi
 
-The **Department of Health Abu Dhabi (DoH)** — formerly called **HAAD (Health Authority – Abu Dhabi)** — is the body that governs all healthcare coding, billing, and claims in the emirate. All licensed facilities must follow DoH rules. The DoH publishes a **Coding Manual** and annual **Claims & Adjudication Rules** that are binding.
+The **Department of Health Abu Dhabi (DoH)** — formerly called **HAAD (Health Authority – Abu Dhabi)** — is the body that governs all healthcare coding, billing, and claims in the emirate. All licensed facilities must follow DoH rules. The DoH publishes a **[Coding Manual](https://www.doh.gov.ae/-/media/Feature/shafifya/standards/coding/DOH-Coding-Manual-CSv2021.ashx)** and annual **[Claims & Adjudication Rules](https://www.doh.gov.ae/-/media/Feature/shafifya/Prices/Adjudication-Rules/DOH-Claims-and-Adjudication-Rules-V2025.ashx)** that are binding.
 
 > Dubai has a separate authority: the **Dubai Health Authority (DHA)**. The northern emirates fall under the **Ministry of Health and Prevention (MOHAP)**. Rules differ between them.
 
@@ -179,7 +230,7 @@ The **Department of Health Abu Dhabi (DoH)** — formerly called **HAAD (Health 
 
 ### Key Abu Dhabi–Specific Concepts
 
-**Shafafiya Portal** — The DoH's official online portal that publishes all reference code lists, price lists, claim schemas, and coding updates. Think of it as Abu Dhabi's equivalent of the CMS website. All providers and payers refer to it.
+**[Shafafiya Portal](https://www.doh.gov.ae/en/shafafiya/standards)** — The DoH's official online portal that publishes all reference code lists, price lists, claim schemas, and coding updates. Think of it as Abu Dhabi's equivalent of the CMS website. All providers and payers refer to it. The [Shafafiya Dictionary](https://www.doh.gov.ae/en/Shafafiya/dictionary) is particularly useful for looking up specific codes.
 
 **Mandatory Tariff List** — Abu Dhabi has a government-set price list for services, based on CPT RVUs (relative value units). Unlike the US where prices are heavily negotiated between payers and providers, Abu Dhabi has a floor price structure.
 
@@ -235,4 +286,17 @@ Here's a simplified example of a real patient encounter flowing through these sy
 - **DHA** — Dubai Health Authority. Same role as DoH but for Dubai; uses slightly different rules.
 - **MOHAP** — Ministry of Health and Prevention. Governs the northern emirates (Sharjah, Ajman, RAK, etc.).
 - **Daman** — The largest health insurer / TPA in Abu Dhabi; administers the Thiqa scheme for UAE nationals.
-- **Shafafiya** — DoH's online portal for code lists, reference prices, and claim submission standards.
+- **[Shafafiya](https://www.doh.gov.ae/en/shafafiya/standards)** — DoH's online portal for code lists, reference prices, and claim submission standards.
+
+---
+
+## Reference Documents (Abu Dhabi)
+
+Official DoH publications — these are the primary sources for coding and billing in Abu Dhabi:
+
+| Document | Description |
+|----------|-------------|
+| [DoH Coding Manual](https://www.doh.gov.ae/-/media/Feature/shafifya/standards/coding/DOH-Coding-Manual-CSv2021.ashx) | The definitive guide to coding within Abu Dhabi. Covers ICD-10-CM, CPT, HCPCS, and USCLS usage rules. |
+| [DoH Claims & Adjudication Rules (2025)](https://www.doh.gov.ae/-/media/Feature/shafifya/Prices/Adjudication-Rules/DOH-Claims-and-Adjudication-Rules-V2025.ashx) | Rules governing how claims are submitted, processed, and paid — including IR-DRG weights and tariff updates. |
+| [Shafafiya Standards Portal](https://www.doh.gov.ae/en/shafafiya/standards) | Reference code lists, claim schemas, XML samples, and pricing. Updated regularly. |
+| [Shafafiya Dictionary](https://www.doh.gov.ae/en/Shafafiya/dictionary) | Searchable lookup for individual codes across all code sets. |
