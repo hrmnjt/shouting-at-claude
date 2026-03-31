@@ -40,3 +40,10 @@ device.
 - **Healthcare coding** (`healthcare-coding-guide.md`) — ICD-10, CPT, DRG,
   HCPCS, USCLS, and Abu Dhabi / DoH-specific context (IR-DRG, Shafafiya,
   Mandatory Tariff)
+- **AsciiDoc vs Markdown** (`asciidoc-vs-markdown.md`) — why AsciiDoc
+  exists, its strengths (admonitions, includes, callouts, CSV tables,
+  multi-format output), Asciidoctor tooling, and when to stay with
+  Markdown
+- **Changelog publishing workflow** (`changelog-publishing-workflow.md`)
+  — publishing Markdown changelogs to Outlook email, PDF, and website;
+  Pandoc + Juice pipeline, CSS inlining, Quarto as future upgrade path
