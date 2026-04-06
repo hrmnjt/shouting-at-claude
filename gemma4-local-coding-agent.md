@@ -28,16 +28,38 @@ E2B and E4B also support audio input.
 
 ## Which Variant for M1 MacBook Air
 
-| Your RAM | Recommended model | Quantization | Notes                        |
-|----------|-------------------|--------------|------------------------------|
-| 8 GB     | E2B               | Q8_0         | Leaves headroom for OS       |
-| 8 GB     | E4B               | Q4_K_M       | Tight but workable           |
-| 16 GB    | E4B               | Q8_0         | Comfortable, near-full quality |
-| 16 GB    | 26B-A4B           | Q4_K_M       | ~17 GB loaded, close all apps |
+Apple Silicon uses unified memory — GPU and CPU share the same pool. llama.cpp
+offloads all layers to Metal (`-ngl 99`), so model weights + KV cache come
+directly out of the RAM budget available to your apps.
 
-**Practical pick:** E4B at Q8_0 on 16 GB, or E4B at Q4_K_M on 8 GB. The MoE
-26B-A4B is tempting but the 17 GB loaded size leaves almost no memory on a
-16 GB machine — expect swapping during long coding sessions.
+Approximate memory at 32K context (weights + KV cache):
+
+| Model   | Quant   | Weights | KV cache (32K) | Total inference |
+|---------|---------|---------|----------------|-----------------|
+| E2B     | Q8_0    | 2.3 GB  | 1.5 GB         | ~3.8 GB         |
+| E4B     | Q4_K_M  | 2.5 GB  | 2.0 GB         | ~4.5 GB         |
+| E4B     | Q8_0    | 4.5 GB  | 2.5 GB         | ~7.0 GB         |
+| 26B-A4B | Q4_K_M  | 14 GB   | 3.0 GB         | ~17 GB          |
+
+Normal macOS workload (browser + editor + Slack) consumes ~5–7 GB on its own.
+
+| Your RAM | Recommended model | Quant   | Notes                                  |
+|----------|-------------------|---------|----------------------------------------|
+| 8 GB     | E2B               | Q8_0    | ~3.8 GB inference + 4 GB OS fits      |
+| 8 GB     | E4B               | Q4_K_M  | Will swap with normal workloads open  |
+| 16 GB    | E4B               | Q4_K_M  | ~10–11 GB total, comfortable           |
+| 16 GB    | E4B               | Q8_0    | ~12–13 GB total, near-full quality     |
+| 16 GB    | 26B-A4B           | Q4_K_M  | ~22 GB total — close everything else  |
+
+**Practical pick:** E4B Q4_K_M on 16 GB is the sweet spot — leaves 5+ GB for
+normal work. E4B Q8_0 is feasible too but leaves less headroom. On 8 GB, use
+E2B; E4B will swap constantly if you have a browser and editor open.
+
+**Thermal throttling:** M1 Air has no fan. During sustained inference (long
+prompts, multi-file context) the chip throttles. Expect ~25 t/s initially
+dropping to ~12–15 t/s after a few minutes of heavy use. For a coding agent
+this mainly affects prefill time on large prompts — short back-and-forth is
+fine.
 
 ## Inference Setup
 
